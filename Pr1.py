@@ -5,7 +5,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 # Importamos los datos del excel
-ArchivoXl =pd.read_excel(r'C:\Users\dmitr\Documents\TEC\1 Semestre 2024\Probabilidad y Estadistica\Proyecto 1\AirQualityUCI.xlsx')
+ArchivoXl =pd.read_excel(r'AirQualityUCI.xlsx')
 columna = ArchivoXl['C6H6(GT)']
 arreglo = np.array(columna)
 print(arreglo)
