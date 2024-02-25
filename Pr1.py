@@ -5,13 +5,26 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 # Importamos los datos del excel
-ArchivoXl =pd.read_excel(r'C:\Users\segur\OneDrive\Documentos\Electro\EL4702\Pr_1\AirQualityUCI.xlsx') # <-- Se agrega la ruta donde
-columna = ArchivoXl['C6H6(GT)']													     # esté guardado el archivo
-arreglo = np.array(columna)
+ArchivoXl =pd.read_excel(r'AirQualityUCI.xlsx') <- #Hay que tener el documento excel y  .py en la misma carpeta
+DatosTiempo = ArchivoXl['Time']
+Datos = ArchivoXl['C6H6(GT)']
+
+# Arreglos para los graficos
+    
+arreglo = np.array(Datos)
+HorasEnTime = np.array(DatosTiempo)
+Horas_array = []
+
 n = len(arreglo)
 minimo = min(arreglo)
 maximo = max(arreglo)
 sumatotal= sum(arreglo)
+
+for hora in HorasEnTime:
+    c_hora= str(hora)
+    Horas_array.append(c_hora)
+    
+Horas = np.array(Horas_array)
 
 # Medidas de Tendencia y variabilidad
 print("----- Medidas de Tendencia y variabilidad -----")
@@ -39,12 +52,29 @@ print('clases ',clases)
 print('rango', rango)
 print('intervalos', intervalos)
 
+# Pruba de las operaciones para el histograma
+
+print('clases ',clases)
+print('rango', rango)
+print('intervalos', intervalos)
+
 # Generamos los datos para el gráfico
+
+plt.figure()
 plt.hist(arreglo, bins=clases, edgecolor='blue')
 
 plt.xlabel('Valores')
 plt.ylabel('Frecuencia')
 plt.title('Histograma')
 
-# Mostrar el histograma
-plt.show() 
+# Generamos el diagrama de puntos
+plt.figure()    
+plt.plot(Horas, arreglo, 'bo')
+plt.gca().xaxis.set_major_formatter(plt.matplotlib.dates.DateFormatter('%d:%M:%S'))
+plt.xticks(rotation=90)
+plt.xlabel('Horas')
+plt.ylabel('Resultados')
+plt.title('Diagrama de puntos')
+
+# Mostrar el histograma y el diagrama de puntos
+plt.show()
