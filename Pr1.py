@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 
 # Importamos los datos del excel
 ArchivoXl =pd.read_excel(r'C:\Users\segur\OneDrive\Documentos\Electro\EL4702\Pr_1\AirQualityUCI.xlsx') # <-- Se agrega la ruta donde
-columna = ArchivoXl['C6H6(GT)']																		                                     # esté guardado el archivo
+columna = ArchivoXl['C6H6(GT)']													     # esté guardado el archivo
 arreglo = np.array(columna)
 n = len(arreglo)
 minimo = min(arreglo)
