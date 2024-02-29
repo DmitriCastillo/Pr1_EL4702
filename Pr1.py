@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 
 # Importamos los datos del excel
 ArchivoXl =pd.read_excel(r'AirQualityUCI.xlsx') #<- Hay que tener el documento excel y  .py en la misma carpeta
-DatosTiempo = ArchivoXl['Time']
+DatosTiempo = ArchivoXl[ArchivoXl['C6H6(GT)']>-200]['Time']
 Datos = ArchivoXl[ArchivoXl['C6H6(GT)']>-200]['C6H6(GT)']
 
 # Arreglos para los graficos
@@ -76,5 +76,8 @@ plt.xlabel('Horas')
 plt.ylabel('Resultados')
 plt.title('Diagrama de puntos')
 
+plt.figure()    
+plt.boxplot(Datos, patch_artist=True, labels=['C6H6'])
+plt.title('Diagrama de cajas')
 # Mostrar el histograma y el diagrama de puntos
 plt.show()
