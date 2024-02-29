@@ -60,7 +60,7 @@ print('   Intervalos:\n   ->', intervalos,'\n')
 plt.figure()
 plt.hist(arreglo, bins=clases, edgecolor='blue')
 
-plt.xlabel('Concentración real de benceno promediada por hora en microg/m^3')
+plt.xlabel('Concentración de C6H6 promediada por hora (microg/m^3)')
 plt.ylabel('Frecuencia')
 plt.title('Histograma')
 
@@ -69,8 +69,8 @@ plt.figure()
 plt.plot(Horas, arreglo, 'bo')
 plt.gca().xaxis.set_major_formatter(plt.matplotlib.dates.DateFormatter('%d%M'))
 plt.xticks(rotation=0)
-plt.xlabel('Horas')
-plt.ylabel('Concentración real de benceno promediada por hora en microg/m^3')
+plt.xlabel('Tiempo (h)')
+plt.ylabel('Concentración de C6H6 promediada por hora (microg/m^3)')
 plt.title('Diagrama de puntos')
 plt.yticks(range(0,math.ceil(maximo),3))
 
@@ -78,7 +78,7 @@ plt.yticks(range(0,math.ceil(maximo),3))
 # Generar un diagrama de cajas
 plt.figure()    
 plt.boxplot(Datos, patch_artist=True, labels=['C6H6'])
-plt.ylabel('Concentración real de benceno promediada por hora en microg/m^3')
+plt.ylabel('Concentración de C6H6 promediada por hora (microg/m^3)')
 plt.title('Diagrama de cajas')
 # Mostrar el histograma y el diagrama de puntos
 plt.show()
