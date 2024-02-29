@@ -37,12 +37,12 @@ Horas = np.array(Horas_array)
 
 # Medidas de Tendencia y variabilidad
 print("-------- Medidas de Tendencia y variabilidad --------")
-print("   Total de datos: \n   ->n =", n)
+print("   Total de datos: \n   -> n =", n)
 print("   Minimo: \n   ->",minimo,"\n""   Maximo:\n   ->",maximo)
-print("   Media: ", np.mean(arreglo))
-print("   Mediana: ", np.median(arreglo))
-print("   Desviación estándar: ", np.std(arreglo))
-print("   Varianza: ", np.var(arreglo),'\n')
+print("   Media:\n   ->", np.mean(arreglo))
+print("   Mediana:\n   ->", np.median(arreglo))
+print("   Desviación estándar:\n   ->", np.std(arreglo))
+print("   Varianza:\n   ->", np.var(arreglo),'\n')
 
 
 # Datos para un histograma sin utilizar los intervalos de tiempo
@@ -52,9 +52,9 @@ intervalos = ((rango)+(rango * 0.5))/clases
 
 # Prueba de las operaciones para el histograma
 print("----------- Operaciones para el histograma ----------")
-print('   Clases ',clases)
-print('   Rango', rango)
-print('   Intervalos', intervalos,'\n')
+print('   Clases:\n   ->', clases)
+print('   Rango:\n   ->', rango)
+print('   Intervalos:\n   ->', intervalos,'\n')
 # Generamos los datos para el gráfico
 
 plt.figure()
@@ -67,7 +67,7 @@ plt.title('Histograma')
 # Generamos el diagrama de puntos
 plt.figure()    
 plt.plot(Horas, arreglo, 'bo')
-plt.gca().xaxis.set_major_formatter(plt.matplotlib.dates.DateFormatter('%d:%M:%S'))
+plt.gca().xaxis.set_major_formatter(plt.matplotlib.dates.DateFormatter('%d:%M'))
 plt.xticks(rotation=90)
 plt.xlabel('Horas')
 plt.ylabel('Concentración real de benceno promediada por hora en microg/m^3')
@@ -75,6 +75,7 @@ plt.title('Diagrama de puntos')
 
 plt.figure()    
 plt.boxplot(Datos, patch_artist=True, labels=['C6H6'])
+plt.ylabel('Concentración real de benceno promediada por hora en microg/m^3')
 plt.title('Diagrama de cajas')
 # Mostrar el histograma y el diagrama de puntos
 plt.show()
