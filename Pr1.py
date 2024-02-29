@@ -1,3 +1,11 @@
+"""
+Proyecto 1 Probabilidad y Esatdística
+Análisis de Concentración de Benzeno
+Creado por: Axel Dmitri Castillo Collao 2023154988
+		    Felipe Sánchez Segura 2023083272
+		    Yair González Núñez 202304804
+"""
+
 # Importamos los módulos necesarios
 import math
 import pandas as pd
@@ -27,20 +35,14 @@ for hora in HorasEnTime:
 Horas = np.array(Horas_array)
 
 # Medidas de Tendencia y variabilidad
-print("----- Medidas de Tendencia y variabilidad -----")
-print("Media: ", np.mean(arreglo))
-print("Mediana: ", np.median(arreglo))
-print("Desviación estándar: ", np.std(arreglo))
-print("Varianza: ", np.var(arreglo))
+print("-------- Medidas de Tendencia y variabilidad --------")
+print("   Total de datos: \n   ->n =", n)
+print("   Minimo: \n   ->",minimo,"\n""   Maximo:\n   ->",maximo)
+print("   Media: ", np.mean(arreglo))
+print("   Mediana: ", np.median(arreglo))
+print("   Desviación estándar: ", np.std(arreglo))
+print("   Varianza: ", np.var(arreglo),'\n')
 
-# Prueba de que los datos son correctos 
-print("total de datos 9357")
-print("length del arreglo", n)
-print(arreglo)
-print("minimo", minimo, "| maximo", maximo)
-print("Total de datos sumados(incluyendo los -200), 17456,2")
-print("Suma de guardada", sumatotal)
-print("fin de la prueba")
 
 # Datos para un histograma sin utilizar los intervalos de tiempo
 clases = math.ceil(math.sqrt(n))
@@ -48,16 +50,10 @@ rango = maximo-minimo
 intervalos = ((rango)+(rango * 0.5))/clases
 
 # Prueba de las operaciones para el histograma
-print('clases ',clases)
-print('rango', rango)
-print('intervalos', intervalos)
-
-# Pruba de las operaciones para el histograma
-
-print('clases ',clases)
-print('rango', rango)
-print('intervalos', intervalos)
-
+print("----------- Operaciones para el histograma ----------")
+print('   Clases ',clases)
+print('   Rango', rango)
+print('   Intervalos', intervalos,'\n')
 # Generamos los datos para el gráfico
 
 plt.figure()
