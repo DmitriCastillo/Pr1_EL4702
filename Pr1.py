@@ -1,9 +1,10 @@
 """
 Proyecto 1 Probabilidad y Esatdística
 Análisis de Concentración de Benzeno
-Creado por: Axel Dmitri Castillo Collao 2023154988
-		    Felipe Sánchez Segura 2023083272
-		    Yair González Núñez 202304804
+Creado por:
+           Axel Dmitri Castillo Collao 2023154988
+	   Felipe Sánchez Segura 2023083272
+           Yair González Núñez 202304804
 """
 
 # Importamos los módulos necesarios
@@ -59,7 +60,7 @@ print('   Intervalos', intervalos,'\n')
 plt.figure()
 plt.hist(arreglo, bins=clases, edgecolor='blue')
 
-plt.xlabel('Valores')
+plt.xlabel('Concentración real de benceno promediada por hora en microg/m^3')
 plt.ylabel('Frecuencia')
 plt.title('Histograma')
 
@@ -69,7 +70,7 @@ plt.plot(Horas, arreglo, 'bo')
 plt.gca().xaxis.set_major_formatter(plt.matplotlib.dates.DateFormatter('%d:%M:%S'))
 plt.xticks(rotation=90)
 plt.xlabel('Horas')
-plt.ylabel('Resultados')
+plt.ylabel('Concentración real de benceno promediada por hora en microg/m^3')
 plt.title('Diagrama de puntos')
 
 plt.figure()    
