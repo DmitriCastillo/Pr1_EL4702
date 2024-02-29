@@ -67,7 +67,7 @@ plt.title('Histograma')
 # Generamos el diagrama de puntos
 plt.figure()    
 plt.plot(Horas, arreglo, 'bo')
-plt.gca().xaxis.set_major_formatter(plt.matplotlib.dates.DateFormatter('%d:%M'))
+plt.gca().xaxis.set_major_formatter(plt.matplotlib.dates.DateFormatter('%d%M'))
 plt.xticks(rotation=90)
 plt.xlabel('Horas')
 plt.ylabel('Concentración real de benceno promediada por hora en microg/m^3')
