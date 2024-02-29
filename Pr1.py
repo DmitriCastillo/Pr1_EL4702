@@ -7,7 +7,7 @@ from matplotlib import pyplot as plt
 # Importamos los datos del excel
 ArchivoXl =pd.read_excel(r'AirQualityUCI.xlsx') #<- Hay que tener el documento excel y  .py en la misma carpeta
 DatosTiempo = ArchivoXl['Time']
-Datos = ArchivoXl['C6H6(GT)']
+Datos = ArchivoXl[ArchivoXl['C6H6(GT)']>-200]['C6H6(GT)']
 
 # Arreglos para los graficos
     
