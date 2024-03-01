@@ -42,9 +42,21 @@ print("   Minimo: \n   ->",minimo,"\n""   Maximo:\n   ->",maximo)
 print("   Media:\n   ->", np.mean(arreglo))
 print("   Mediana:\n   ->", np.median(arreglo))
 print("   Desviación estándar:\n   ->", np.std(arreglo))
-print("   Varianza:\n   ->", np.var(arreglo),'\n')
+print("   Varianza:\n   ->", np.var(arreglo),)
 print("   Coeficiente de variación:\n   ->",(np.std(arreglo)/np.mean(arreglo))*100)
 
+# Información de Cuartiles
+q1 = np.quantile(arreglo, .25)
+q2 = np.quantile(arreglo, .50)
+q3 = np.quantile(arreglo, .75)
+ric = q3 - q1
+print("-------- Cuartiles --------")
+print("   Q1: \n   ->", q1)
+print("   Q2: \n   ->", q2)
+print("   Q3: \n   ->", q3)
+print("   Rango Intercuartílico: \n    ->",ric)
+print("   Límite superior: \n   ->",(q3 + 1.5*ric))
+print("   Límite inferior: \n   ->",(q1 - 1*ric))
 
 # Datos para un histograma sin utilizar los intervalos de tiempo
 clases = math.ceil(math.sqrt(n))
@@ -81,5 +93,7 @@ plt.figure()
 plt.boxplot(Datos, patch_artist=True, labels=['C6H6'])
 plt.ylabel('Concentración de C6H6 promediada por hora (microg/m^3)')
 plt.title('Diagrama de cajas')
+#plt.yticks(range(0,math.ceil(maximo),3))
+#plt.grid(True)
 # Mostrar el histograma y el diagrama de puntos
 plt.show()
