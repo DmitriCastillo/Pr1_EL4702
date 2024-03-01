@@ -56,7 +56,7 @@ print("   Q2: \n   ->", q2)
 print("   Q3: \n   ->", q3)
 print("   Rango Intercuartílico: \n    ->",ric)
 print("   Límite superior: \n   ->",(q3 + 1.5*ric))
-print("   Límite inferior: \n   ->",(q1 - 1*ric))
+print("   Límite inferior: \n   ->",(q1 - 1.5*ric))
 
 # Datos para un histograma sin utilizar los intervalos de tiempo
 clases = math.ceil(math.sqrt(n))
