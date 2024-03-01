@@ -43,6 +43,7 @@ print("   Media:\n   ->", np.mean(arreglo))
 print("   Mediana:\n   ->", np.median(arreglo))
 print("   Desviación estándar:\n   ->", np.std(arreglo))
 print("   Varianza:\n   ->", np.var(arreglo),'\n')
+print("   Coeficiente de variación:\n   ->",(np.std(arreglo)/np.mean(arreglo))*100)
 
 
 # Datos para un histograma sin utilizar los intervalos de tiempo
